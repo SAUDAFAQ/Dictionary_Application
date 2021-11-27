@@ -11,7 +11,7 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey[900],
       body: Container(
-        padding: const EdgeInsets.all(31),
+        padding: const EdgeInsets.all(30),
         width: double.infinity,
         child: Column(
           children: [
