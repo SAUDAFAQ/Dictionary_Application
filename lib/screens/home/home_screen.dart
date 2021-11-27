@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
             "Dictionary App",
             style: TextStyle(
               color: Colors.deepOrangeAccent,
-              fontSize: 34,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
           ),
