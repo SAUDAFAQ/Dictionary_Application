@@ -1,10 +1,12 @@
 import 'package:dictionary_app/model/word_response.dart';
+import 'package:dictionary_app/utilities/title_case.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
   final WordResponse wordResponse;
 
   DetailScreen(this.wordResponse);
+  TitleCase instance = TitleCase();
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "${wordResponse.word}",
+              "${instance.titleCase(wordResponse.word)}",
               style: TextStyle(color: Colors.deepOrangeAccent, fontSize: 36),
             ),
             SizedBox(
