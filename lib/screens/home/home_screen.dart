@@ -1,5 +1,6 @@
-import 'package:dictionary_app/bloc/dictionary_cubit.dart';
+import 'package:dictionary_app/blocs/dictionary_cubit.dart';
 import 'package:dictionary_app/screens/list/list_screen.dart';
+import 'package:dictionary_app/widget/gradient_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 32,
+            height: 30,
           ),
           TextField(
             controller: cubit.queryControler,
@@ -49,19 +50,27 @@ class HomeScreen extends StatelessWidget {
               hintStyle: TextStyle(color: Colors.grey),
             ),
           ),
-          Spacer(),
-          Container(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                cubit.getWordSearched();
-              },
-              style: ElevatedButton.styleFrom(
-                  primary: Colors.deepOrangeAccent,
-                  padding: const EdgeInsets.all(16)),
-              child: Text("SEARCH"),
+          SizedBox(
+            height: 30.0,
+          ),
+          GradientButton(
+            width: 150,
+            height: 45,
+            onPressed: () {
+              cubit.getWordSearched();
+            },
+            text: Text(
+              'Search',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            icon: Icon(
+              Icons.arrow_forward,
+              color: Colors.white,
             ),
           ),
+          Spacer()
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 
 class HttpService {
-  static final baseUrl = "https://api.dictionaryapi.dev/api/v2/entries/";
+  static final baseUrl = "https://api.dictionaryapi.dev/api/v2/entries/en_US/";
 
   static Future<http.Response> getRequest(endPoint) async {
     http.Response response;

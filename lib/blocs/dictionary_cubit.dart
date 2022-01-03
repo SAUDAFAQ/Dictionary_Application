@@ -1,5 +1,5 @@
 import 'package:dictionary_app/model/word_response.dart';
-import 'package:dictionary_app/repo/word_repo.dart';
+import 'package:dictionary_app/repository/word_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,6 +18,7 @@ class DictionaryCubit extends Cubit<DictionaryState> {
 
       if (words == null) {
         emit(ErrorState("There is some issue."));
+        emit(NoWordSearchedState());
       } else {
         print(words.toString());
         emit(WordSearchedState(words));
@@ -26,6 +27,7 @@ class DictionaryCubit extends Cubit<DictionaryState> {
     } on Exception catch (e) {
       print(e);
       emit(ErrorState(e.toString()));
+      emit(NoWordSearchedState());
     }
   }
 }
@@ -44,6 +46,5 @@ class WordSearchedState extends DictionaryState {
 
 class ErrorState extends DictionaryState {
   final message;
-
   ErrorState(this.message);
 }

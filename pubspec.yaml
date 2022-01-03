@@ -42,6 +42,10 @@ dev_dependencies:
   cupertino_icons: ^1.0.2
   flutter_bloc: ^7.0.0
   http: ^0.13.1
+  timer_snackbar: ^0.0.3
+  firebase_core: ^1.10.6
+  firebase_auth: ^3.3.0
+  equatable: ^2.0.3
 
 
   flutter_native_splash: ^0.2.8
